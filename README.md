@@ -1,6 +1,6 @@
-# FastDelete
+# FastDeleteApp
 
-FastDelete is a lightweight, high-speed **depth-first folder deletion** utility written in C#.  
+FastDeleteApp is a lightweight, high-speed **depth-first folder deletion** utility written in C#.  
 It’s designed to instantly remove large and stubborn folders like `node_modules` — even those with:
 - Long file paths (> 260 characters)
 - Locked read-only/system attributes
@@ -9,16 +9,20 @@ It’s designed to instantly remove large and stubborn folders like `node_module
 ---
 
 ## Features
-- **Depth-first deletion** (post-order traversal)  
+- **Depth-first deletion**
   Ensures children are deleted before their parent directories, avoiding "folder not empty" errors.
 - **Long path support** (`\\?\` prefix)  
   Handles Windows paths beyond the normal 260-character limit.
-- **Attribute reset**  
-  Automatically removes read-only/system attributes before deletion.
-- **Drag & Drop ready**  
-  Simply drag a folder onto the executable to delete it.
 - **Blazing fast**  
   Uses pure .NET I/O operations instead of slower shell commands.
+
+---
+
+## USAGE:
+```bash
+fda "c:\path\to\node_modules"
+```
+## **⚠️ Always double check before you enter the path.**
 
 ---
 
@@ -30,3 +34,4 @@ Download and install the [.NET SDK](https://dotnet.microsoft.com/en-us/download)
 ### 2. Compile
 ```bash
 dotnet build -c Release
+```
